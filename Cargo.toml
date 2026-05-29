@@ -1,0 +1,51 @@
+[package]
+name = "tui-globe"
+version = "1.0.0"
+authors = ["d10n <david@bitinvert.com>"]
+repository = "https://github.com/d10n/tui-globe"
+edition = "2024"
+rust-version = "1.94.0"
+description = "Render a 3D globe in a terminal"
+license = "GPL-3.0-or-later"
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "tui-globe"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0"
+crossterm = "0.29"
+ratatui = "0.30.0"
+zstd = { version = "0.13", default-features = false }
+
+[build-dependencies]
+zstd = { version = "0.13", default-features = false }
+
+[lints.clippy]
+allow_attributes = "warn"
+as_ptr_cast_mut = "warn"
+as_underscore = "warn"
+borrow_as_ptr = "warn"
+implicit_clone = "warn"
+undocumented_unsafe_blocks = "warn"
+unicode_not_nfc = "warn"
+unused_async = "deny"
+wildcard_dependencies = "deny"
+
+[lints.rust]
+explicit_outlives_requirements = "warn"
+non_ascii_idents = "forbid"
+rust_2018_idioms = { level = "deny", priority = -1 }
+single_use_lifetimes = "warn"
+unused_lifetimes = "warn"
+unused_macro_rules = "warn"
+
+[profile.release]
+codegen-units = 1
+opt-level = "s"
+strip = true
+lto = true
+
