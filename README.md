@@ -4,6 +4,8 @@ A ratatui Braille-canvas globe widget. Geometry buffers under `assets/geo/`
 are baked from public domain [Natural Earth](https://www.naturalearthdata.com)
 data and embedded at compile time via `MapData::embedded()`.
 
+![Demo](https://raw.githubusercontent.com/wiki/d10n/tui-globe/img/tui-globe.gif)
+
 ## Demo app
 
 ```bash
